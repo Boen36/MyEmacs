@@ -43,7 +43,8 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      helm
-     lsp
+     (lsp :variables
+          lsp-headerline-breadcrumb-enable nil)
      markdown
      org
      java
@@ -53,8 +54,11 @@ This function should only modify configuration layer settings."
      (shell :variables
              shell-default-height 30
              shell-default-position 'bottom)
+     (vue :variables
+          vue-backend 'lsp)
      version-control
-     treemacs)
+     (treemacs :variables
+               treemacs-no-png-images t))
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -551,6 +555,12 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  (setq-default
+   ;; web-mode
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2)
 )
 
 
@@ -573,7 +583,7 @@ This function is called at the very end of Spacemacs initialization."
  '(doom-modeline-modal-icon t)
  '(doom-modeline-mode t)
  '(evil-want-Y-yank-to-eol nil))
- (custom-set-faces
+(custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
