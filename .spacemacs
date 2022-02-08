@@ -58,7 +58,11 @@ This function should only modify configuration layer settings."
           vue-backend 'lsp)
      version-control
      (treemacs :variables
+               treemacs-use-follow-mode t
+               treemacs-lock-width t
                treemacs-no-png-images t
+               treemacs-use-git-mode 'extended
+               treemacs-use-filewatch-mode t
                treemacs-use-icons-dired nil))
 
 
