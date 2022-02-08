@@ -52,8 +52,9 @@ This function should only modify configuration layer settings."
             scala-auto-treeview t
             scala-sbt-window-position 'bottom)
      (shell :variables
-             shell-default-height 30
-             shell-default-position 'bottom)
+            shell-default-height 30
+            close-window-with-terminal t
+            shell-default-position 'bottom)
      (vue :variables
           vue-backend 'lsp)
      version-control
@@ -312,7 +313,7 @@ It should only modify the values of Spacemacs settings."
    ;; auto-save the file in-place, `cache' to auto-save the file to another
    ;; file stored in the cache directory and `nil' to disable auto-saving.
    ;; (default 'cache)
-   dotspacemacs-auto-save-file-location 'cache
+   dotspacemacs-auto-save-file-location 'original
 
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
    dotspacemacs-max-rollback-slots 5
