@@ -44,7 +44,8 @@ This function should only modify configuration layer settings."
      git
      ivy
      (lsp :variables
-          lsp-headerline-breadcrumb-enable nil)
+          lsp-headerline-breadcrumb-enable nil
+          lsp-modeline-code-actions-enable nil)
      markdown
      java
      (scala :variables
@@ -594,8 +595,7 @@ This function is called at the very end of Spacemacs initialization."
  '(doom-modeline-mode t)
  '(doom-modeline-persp-icon nil)
  '(evil-want-Y-yank-to-eol nil)
- '(package-selected-packages
-   '(wgrep smex lsp-ivy ivy-yasnippet ivy-xref ivy-purpose ivy-hydra ivy-avy counsel-projectile counsel-css counsel swiper ivy yasnippet-snippets xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify vterm volatile-highlights vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-evil toc-org terminal-here tagedit symon symbol-overlay string-inflection string-edit spaceline-all-the-icons smeargle slim-mode shell-pop scss-mode sbt-mode sass-mode restart-emacs rainbow-delimiters quickrun pug-mode prettier-js popwin pcre2el password-generator paradox overseer orgit-forge org-superstar org-rich-yank org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file npm-mode nodejs-repl nameless mvn multi-term multi-line molokai-theme mmm-mode maven-test-mode markdown-toc macrostep lsp-ui lsp-origami lsp-metals lsp-java lorem-ipsum livid-mode link-hint json-reformat json-navigator json-mode js2-refactor js-doc inspector info+ indent-guide impatient-mode hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-mode groovy-imports google-translate golden-ratio gnuplot gitignore-templates git-timemachine git-modes git-messenger git-link git-gutter-fringe gh-md fuzzy font-lock+ flycheck-pos-tip flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emr emmet-mode elisp-slime-nav editorconfig dumb-jump drag-stuff dotenv-mode doom-modeline dired-quick-sort diminish devdocs define-word company-web column-enforce-mode clean-aindent-mode centered-cursor-mode browse-at-remote auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line ac-ispell)))
+ '(package-selected-packages))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
