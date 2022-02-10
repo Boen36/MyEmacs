@@ -41,7 +41,8 @@ This function should only modify configuration layer settings."
      ;; auto-completion
      ;; better-defaults
      ;; emacs-lisp
-     typescript
+     (typescript :variables
+                 typescript-indent-level 2)
      git
      ivy
      (lsp :variables
