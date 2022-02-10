@@ -62,6 +62,7 @@ This function should only modify configuration layer settings."
      (treemacs :variables
                treemacs-use-follow-mode t
                treemacs-lock-width t
+               treemacs-display-current-project-exclusively t
                treemacs-no-png-images t
                treemacs-use-git-mode 'extended
                treemacs-use-filewatch-mode t
