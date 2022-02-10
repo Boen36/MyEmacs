@@ -41,6 +41,7 @@ This function should only modify configuration layer settings."
      ;; auto-completion
      ;; better-defaults
      ;; emacs-lisp
+     typescript
      git
      ivy
      (lsp :variables
@@ -600,7 +601,7 @@ This function is called at the very end of Spacemacs initialization."
  '(doom-modeline-mode t)
  '(doom-modeline-persp-icon nil)
  '(evil-want-Y-yank-to-eol nil)
- '(package-selected-packages nil))
+ '(package-selected-packages))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
