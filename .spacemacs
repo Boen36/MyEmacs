@@ -552,9 +552,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
         ("https" . "127.0.0.1:7890")))
 (setq
  monokai-background "#2c2525")
-(setq
- web-mode-enable-auto-closing t
- web-mode-tag-auto-close-style 2)
 )
 
 
