@@ -52,6 +52,7 @@ This function should only modify configuration layer settings."
             scala-auto-treeview t
             scala-sbt-window-position 'bottom)
      (shell :variables
+            shell-default-shell 'multi-term
             shell-default-height 30
             close-window-with-terminal t
             shell-default-position 'bottom)
