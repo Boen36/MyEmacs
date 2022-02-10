@@ -611,5 +611,6 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(doom-modeline-bar ((t (:background "#2c2525"))))
- '(mode-line ((t (:background "#2c2525" :foreground "#F8F8F0" :box (:line-width 1 :color "#64645E" :style unspecified))))))
+ '(mode-line ((t (:background "#2c2525" :foreground "#F8F8F0" :box (:line-width 1 :color "#2c2525" :style unspecified)))))
+ '(mode-line-inactive ((t (:background "#2c2525" :foreground "#75715E" :box (:line-width 1 :color "#2c2525" :style unspecified))))))
 )
