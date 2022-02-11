@@ -42,6 +42,7 @@ This function should only modify configuration layer settings."
      ;; better-defaults
      ;; emacs-lisp
      (typescript :variables
+                 typescript-backend 'tide
                  typescript-indent-level 2)
      git
      ivy
@@ -60,6 +61,12 @@ This function should only modify configuration layer settings."
             shell-default-position 'bottom)
      (vue :variables
           vue-backend 'lsp)
+     (javascript :variables
+                 javascript-backend 'lsp
+                 node-add-modules-path t
+                 javascript-import-tool 'import-js
+                 js2-mode-show-strict-warnings nil)
+     (node :variables node-add-modules-path t)
      version-control
      (treemacs :variables
                treemacs-use-follow-mode t
