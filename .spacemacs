@@ -38,14 +38,15 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     auto-completion
+     ;; auto-completion
      ;; better-defaults
      ;; emacs-lisp
      (typescript :variables
                  typescript-backend 'tide
                  typescript-indent-level 2)
      git
-     ivy
+     ;; ivy
+     compleseus
      (lsp :variables
           lsp-headerline-breadcrumb-enable nil
           lsp-modeline-code-actions-enable nil)
@@ -61,12 +62,6 @@ This function should only modify configuration layer settings."
             shell-default-position 'bottom)
      (vue :variables
           vue-backend 'lsp)
-     (javascript :variables
-                 javascript-backend 'lsp
-                 node-add-modules-path t
-                 javascript-import-tool 'import-js
-                 js2-mode-show-strict-warnings nil)
-     (node :variables node-add-modules-path t)
      version-control
      (treemacs :variables
                treemacs-use-follow-mode t
