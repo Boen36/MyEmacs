@@ -41,6 +41,7 @@ This function should only modify configuration layer settings."
      ;; auto-completion
      ;; better-defaults
      ;; emacs-lisp
+     ibuffer
      (typescript :variables
                  typescript-backend 'tide
                  typescript-indent-level 2)
@@ -62,7 +63,7 @@ This function should only modify configuration layer settings."
             shell-default-position 'bottom)
      (vue :variables
           vue-backend 'lsp)
-     version-control
+     ;; version-control
      (treemacs :variables
                treemacs-use-follow-mode t
                treemacs-lock-width t
