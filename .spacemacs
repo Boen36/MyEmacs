@@ -564,7 +564,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
         ("https" . "127.0.0.1:7890")))
 (setq
  monokai-background "#2c2525")
-(spacemacs/set-leader-keys "P" 'projectile-switch-project)
 )
 
 
