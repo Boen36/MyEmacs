@@ -558,7 +558,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
       '(("http" . "127.0.0.1:7890")
         ("https" . "127.0.0.1:7890")))
 (setq
- monokai-background "#000000")
+ monokai-background "#2c2525")
 )
 
 
