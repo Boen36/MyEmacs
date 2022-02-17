@@ -43,6 +43,8 @@ This function should only modify configuration layer settings."
                  typescript-backend 'tide
                  typescript-indent-level 2)
      git
+     (osx :variables
+          osx-option-as 'meta)
      compleseus
      (lsp :variables
           lsp-headerline-breadcrumb-enable nil
@@ -191,7 +193,7 @@ It should only modify the values of Spacemacs settings."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'random
+   dotspacemacs-startup-banner 'official
 
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
