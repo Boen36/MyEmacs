@@ -38,9 +38,15 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     (typescript :variables
-                 typescript-backend 'tide
-                 typescript-indent-level 2)
+     (javascript :variables
+                 javascript-import-tool 'import-js
+                 javascript-backend 'lsp
+                 js2-mode-show-strict-warnings nil
+                 js2-mode-show-parse-errors nil
+                 js2-basic-offset 2
+                 js-indent-level 2
+                 javascript-repl `nodejs
+                 node-add-modules-path t)
      git
      (osx :variables
           osx-option-as 'meta)
