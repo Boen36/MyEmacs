@@ -57,7 +57,8 @@ This function should only modify configuration layer settings."
      markdown
      java
      (sql :variables
-          sql-capitalize-keywords t)
+          sql-capitalize-keywords t
+          sql-backend nil)
      (scala :variables
             scala-auto-treeview t
             scala-sbt-window-position 'bottom)
