@@ -56,6 +56,8 @@ This function should only modify configuration layer settings."
           lsp-modeline-code-actions-enable nil)
      markdown
      java
+     (sql :variables
+          sql-capitalize-keywords t)
      (scala :variables
             scala-auto-treeview t
             scala-sbt-window-position 'bottom)
