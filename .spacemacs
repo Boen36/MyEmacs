@@ -579,7 +579,7 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (setq auto-save-timeout 2)
+  (setq auto-save-timeout 5)
   (setq-default
    ;; web-mode
    web-mode-markup-indent-offset 2
