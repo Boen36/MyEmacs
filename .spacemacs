@@ -622,6 +622,5 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(doom-modeline-bar ((t (:background "#2c2525"))))
  '(mode-line ((t (:background "#2c2525" :foreground "#F8F8F0" :box (:line-width 1 :color "#2c2525" :style unspecified)))))
- '(mode-line-inactive ((t (:background "#2c2525" :foreground "#75715E" :box (:line-width 1 :color "#2c2525" :style unspecified)))))
- '(vertical-border ((t (:foreground "#000000")))))
+ '(mode-line-inactive ((t (:background "#2c2525" :foreground "#75715E" :box (:line-width 1 :color "#2c2525" :style unspecified))))))
 )
