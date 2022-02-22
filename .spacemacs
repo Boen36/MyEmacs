@@ -63,9 +63,9 @@ This function should only modify configuration layer settings."
             scala-auto-treeview t
             scala-sbt-window-position 'bottom)
      (shell :variables
-            shell-default-shell 'multi-term
-            shell-default-height 30
+            shell-default-shell 'vterm
             close-window-with-terminal t
+            shell-default-height 18
             shell-default-position 'bottom)
      (vue :variables
           vue-backend 'lsp)
