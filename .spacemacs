@@ -70,15 +70,7 @@ This function should only modify configuration layer settings."
             shell-default-height 18
             shell-default-position 'bottom)
      (vue :variables
-          vue-backend 'lsp)
-     (treemacs :variables
-               treemacs-use-follow-mode t
-               treemacs-lock-width t
-               treemacs-display-current-project-exclusively t
-               treemacs-no-png-images t
-               treemacs-use-git-mode 'extended
-               treemacs-use-filewatch-mode t
-               treemacs-use-icons-dired nil))
+          vue-backend 'lsp))
 
 
    ;; List of additional packages that will be installed without being wrapped
