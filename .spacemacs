@@ -63,6 +63,7 @@ This function should only modify configuration layer settings."
           sql-backend nil)
      (scala :variables
             scala-auto-treeview t
+            scala-auto-insert-asterisk-in-comments t
             scala-sbt-window-position 'bottom)
      (shell :variables
             shell-default-shell 'vterm
