@@ -39,7 +39,8 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      (typescript :variables
-                 typescript-backend 'lsp)
+                 typescript-backend 'lsp
+                 typescript-indent-level 2)
      (javascript :variables
                  javascript-import-tool 'import-js
                  javascript-backend 'lsp
