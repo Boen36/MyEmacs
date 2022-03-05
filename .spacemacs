@@ -71,6 +71,8 @@ This function should only modify configuration layer settings."
             close-window-with-terminal t
             shell-default-height 18
             shell-default-position 'bottom)
+     (docker :variables
+             docker-dockerfile-backend 'lsp)
      (vue :variables
           vue-backend 'lsp))
 
