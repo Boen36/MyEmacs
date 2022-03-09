@@ -59,6 +59,8 @@ This function should only modify configuration layer settings."
           lsp-modeline-code-actions-enable nil)
      markdown
      java
+     (yaml :variables
+           yaml-enable-lsp t)
      (sql :variables
           sql-capitalize-keywords t
           sql-backend nil)
