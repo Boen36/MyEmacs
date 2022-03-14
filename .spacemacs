@@ -332,7 +332,7 @@ It should only modify the values of Spacemacs settings."
    ;; auto-save the file in-place, `cache' to auto-save the file to another
    ;; file stored in the cache directory and `nil' to disable auto-saving.
    ;; (default 'cache)
-   dotspacemacs-auto-save-file-location 'original
+   dotspacemacs-auto-save-file-location 'cache
 
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
    dotspacemacs-max-rollback-slots 5
@@ -406,7 +406,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters point
    ;; when it reaches the top or bottom of the screen. (default t)
-   dotspacemacs-smooth-scrolling nil
+   dotspacemacs-smooth-scrolling t
 
    ;; Show the scroll bar while scrolling. The auto hide time can be configured
    ;; by setting this variable to a number. (default t)
