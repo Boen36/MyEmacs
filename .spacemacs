@@ -53,8 +53,7 @@ This function should only modify configuration layer settings."
      git
      (osx :variables
           osx-option-as 'meta)
-     (compleseus :variables
-                 compleseus-engine 'selectrum)
+     compleseus
      (lsp :variables
           lsp-headerline-breadcrumb-enable nil
           lsp-modeline-code-actions-enable nil)
