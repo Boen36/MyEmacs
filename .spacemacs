@@ -60,7 +60,9 @@ This function should only modify configuration layer settings."
           lsp-modeline-code-actions-enable nil)
      markdown
      java
-     (go :variables go-backend 'lsp)
+     (go :variables
+         go-tab-width 4
+         go-backend 'lsp)
      yaml
      (sql :variables
           sql-capitalize-keywords t
