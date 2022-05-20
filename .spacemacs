@@ -613,7 +613,6 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(doom-modeline-indent-info t)
  '(doom-modeline-major-mode-icon nil)
- '(electric-pair-mode t)
  '(lsp-java-format-settings-profile "GoogleStyle")
  '(lsp-java-format-settings-url
    "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml")
