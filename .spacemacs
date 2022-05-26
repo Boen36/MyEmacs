@@ -61,6 +61,7 @@ This function should only modify configuration layer settings."
      markdown
      java
      (go :variables
+         go-use-golangci-lint t
          go-tab-width 4
          go-backend 'lsp)
      yaml
