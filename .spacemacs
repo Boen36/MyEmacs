@@ -212,6 +212,13 @@ It should only modify the values of Spacemacs settings."
    ;; If the value is nil then no banner is displayed. (default 'official)
    dotspacemacs-startup-banner 'official
 
+   ;; Scale factor controls the scaling (size) of the startup banner. Default
+   ;; value is `auto' for scaling the logo automatically to fit all buffer
+   ;; contents, to a maximum of the full image height and a minimum of 3 line
+   ;; heights. If set to a number (int or float) it is used as a constant
+   ;; scaling factor for the default logo size.
+   dotspacemacs-startup-banner-scale 'auto
+
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -344,7 +351,7 @@ It should only modify the values of Spacemacs settings."
    ;; auto-save the file in-place, `cache' to auto-save the file to another
    ;; file stored in the cache directory and `nil' to disable auto-saving.
    ;; (default 'cache)
-   dotspacemacs-auto-save-file-location 'cache
+   dotspacemacs-auto-save-file-location nil
 
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
    dotspacemacs-max-rollback-slots 5
