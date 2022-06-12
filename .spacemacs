@@ -53,8 +53,7 @@ This function should only modify configuration layer settings."
      git
      (osx :variables
           osx-option-as 'meta)
-     (compleseus :variables
-                 compleseus-engine 'selectrum)
+     compleseus
      (lsp :variables
           lsp-lens-enable t
           lsp-headerline-breadcrumb-enable nil
@@ -212,13 +211,6 @@ It should only modify the values of Spacemacs settings."
    ;; If the value is nil then no banner is displayed. (default 'official)
    dotspacemacs-startup-banner 'official
 
-   ;; Scale factor controls the scaling (size) of the startup banner. Default
-   ;; value is `auto' for scaling the logo automatically to fit all buffer
-   ;; contents, to a maximum of the full image height and a minimum of 3 line
-   ;; heights. If set to a number (int or float) it is used as a constant
-   ;; scaling factor for the default logo size.
-   dotspacemacs-startup-banner-scale 'auto
-
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -270,6 +262,7 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
+                         doom-monokai-spectrum
                          doom-xcode
                          doom-solarized-light
                          doom-monokai-classic)
@@ -292,7 +285,7 @@ It should only modify the values of Spacemacs settings."
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Source Code Pro"
                                :size 13.0
-                               :weight normal
+                               :weight medium
                                :width normal)
 
    ;; The leader key (default "SPC")
@@ -351,7 +344,7 @@ It should only modify the values of Spacemacs settings."
    ;; auto-save the file in-place, `cache' to auto-save the file to another
    ;; file stored in the cache directory and `nil' to disable auto-saving.
    ;; (default 'cache)
-   dotspacemacs-auto-save-file-location nil
+   dotspacemacs-auto-save-file-location 'cache
 
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
    dotspacemacs-max-rollback-slots 5
@@ -425,7 +418,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters point
    ;; when it reaches the top or bottom of the screen. (default t)
-   dotspacemacs-smooth-scrolling nil
+   dotspacemacs-smooth-scrolling t
 
    ;; Show the scroll bar while scrolling. The auto hide time can be configured
    ;; by setting this variable to a number. (default t)
