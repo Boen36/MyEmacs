@@ -603,6 +603,7 @@ before packages are loaded."
    web-mode-attr-indent-offset 2)
   (setq tab-width 2)
   (setq c-basic-offset 2)
+  (setq web-mode-enable-css-colorization nil)
 )
 
 
