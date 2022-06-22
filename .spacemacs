@@ -284,7 +284,7 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 14.0
+                               :size 15.0
                                :width normal
                                :weight normal)
 
@@ -620,6 +620,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(css-indent-offset 2)
  '(doom-modeline-indent-info t)
  '(doom-modeline-major-mode-icon nil)
  '(lsp-java-format-settings-profile "GoogleStyle")
