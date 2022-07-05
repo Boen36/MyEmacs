@@ -607,6 +607,7 @@ before packages are loaded."
   (setq c-basic-offset 2)
   (setq web-mode-enable-css-colorization nil)
   (setq lsp-enable-symbol-highlighting nil)
+  (setq byte-compile-warnings '((not cl-functions)))
 )
 
 
