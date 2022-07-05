@@ -284,7 +284,7 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 15.0
+                               :size 16.0
                                :width normal
                                :weight normal)
 
@@ -597,6 +597,7 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq-default
+   line-spacing 6
    ;; web-mode
    web-mode-markup-indent-offset 2
    web-mode-css-indent-offset 2
@@ -605,6 +606,7 @@ before packages are loaded."
   (setq tab-width 2)
   (setq c-basic-offset 2)
   (setq web-mode-enable-css-colorization nil)
+  (setq lsp-enable-symbol-highlighting nil)
 )
 
 
