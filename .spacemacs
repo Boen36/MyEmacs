@@ -262,10 +262,11 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
+                         doom-acario-dark
                          doom-snazzy
                          doom-solarized-light
-                         doom-challenger-deep
                          doom-monokai-spectrum
+                         doom-challenger-deep
                          doom-xcode
                          doom-monokai-classic)
 
