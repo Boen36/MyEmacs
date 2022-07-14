@@ -630,6 +630,7 @@ This function is called at the very end of Spacemacs initialization."
  '(doom-modeline-buffer-file-name-style 'file-name)
  '(doom-modeline-indent-info t)
  '(doom-modeline-major-mode-icon nil)
+ '(doom-modeline-window-width-limit 60)
  '(lsp-java-format-settings-profile "GoogleStyle")
  '(lsp-java-format-settings-url
    "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml")
