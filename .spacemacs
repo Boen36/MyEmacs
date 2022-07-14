@@ -262,9 +262,9 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
+                         doom-solarized-light
                          doom-snazzy
                          doom-gruvbox
-                         doom-solarized-light
                          doom-acario-dark
                          doom-monokai-spectrum
                          doom-challenger-deep
@@ -627,6 +627,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(css-indent-offset 2)
+ '(doom-modeline-buffer-file-name-style 'file-name)
  '(doom-modeline-indent-info t)
  '(doom-modeline-major-mode-icon nil)
  '(lsp-java-format-settings-profile "GoogleStyle")
