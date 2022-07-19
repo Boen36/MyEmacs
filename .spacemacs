@@ -262,6 +262,10 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
+                         doom-old-hope
+                         doom-moonlight
+                         doom-dracula
+                         doom-badger
                          doom-snazzy
                          doom-solarized-light
                          doom-gruvbox
