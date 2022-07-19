@@ -1,1 +1,1 @@
-![](./imgs/screenshot.png)
+My Spacemacs config
