@@ -264,11 +264,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-themes '(
                          doom-solarized-light
                          doom-ephemeral
-                         doom-henna
-                         doom-old-hope
                          doom-moonlight
                          doom-dracula
-                         doom-badger
                          doom-snazzy
                          doom-gruvbox
                          doom-acario-dark
