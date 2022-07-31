@@ -56,6 +56,7 @@ This function should only modify configuration layer settings."
      compleseus
      (lsp :variables
           lsp-lens-enable t
+          lsp-modeline-diagnostics-enable t
           lsp-headerline-breadcrumb-enable nil
           lsp-modeline-code-actions-enable nil)
      markdown
