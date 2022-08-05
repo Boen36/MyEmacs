@@ -55,14 +55,15 @@ This function should only modify configuration layer settings."
      (osx :variables
           osx-option-as 'meta)
      compleseus
+     markdown
      (lsp :variables
           lsp-lens-enable t
           lsp-modeline-diagnostics-enable t
           lsp-headerline-breadcrumb-enable nil
           lsp-enable-file-watchers nil
           lsp-log-io nil
+          lsp-use-plists t
           lsp-modeline-code-actions-enable nil)
-     markdown
      java
      (go :variables
          go-use-golangci-lint t
@@ -648,7 +649,7 @@ This function is called at the very end of Spacemacs initialization."
  '(smartparens-global-mode t)
  '(standard-indent 2)
  '(undo-tree-auto-save-history nil)
- '(warning-suppress-log-types '((comp))))
+ '(warning-suppress-types '((comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
