@@ -62,7 +62,6 @@ This function should only modify configuration layer settings."
           lsp-headerline-breadcrumb-enable nil
           lsp-enable-file-watchers nil
           lsp-log-io nil
-          lsp-use-plists t
           lsp-modeline-code-actions-enable nil)
      java
      (go :variables
