@@ -62,7 +62,6 @@ This function should only modify configuration layer settings."
           lsp-headerline-breadcrumb-enable nil
           lsp-enable-file-watchers nil
           lsp-log-io nil
-          lsp-use-plists t
           lsp-modeline-code-actions-enable nil)
      java
      (go :variables
@@ -164,7 +163,7 @@ It should only modify the values of Spacemacs settings."
    ;; This is an advanced option and should not be changed unless you suspect
    ;; performance issues due to garbage collection operations.
    ;; (default '(100000000 0.1))
-   dotspacemacs-gc-cons '(400000000 0.1)
+   dotspacemacs-gc-cons '(300000000 0.2)
 
    ;; Set `read-process-output-max' when startup finishes.
    ;; This defines how much data is read from a foreign process.
