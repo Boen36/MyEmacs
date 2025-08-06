@@ -27,7 +27,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-ask-for-lazy-installation t
 
    ;; List of additional paths where to look for configuration layers.
-   ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
+   ;; Paths must have a trailing slash (i.e. "~/.mycontribs/")
    dotspacemacs-configuration-layer-path '()
 
    ;; List of configuration layers to load.
@@ -43,19 +43,25 @@ This function should only modify configuration layer settings."
                  typescript-backend 'lsp
                  typescript-indent-level 2)
      (javascript :variables
-                 javascript-import-tool 'import-js
                  javascript-backend 'lsp
+                 javascript-fmt-tool 'web-beautify
+                 javascript-import-tool 'import-js
                  js2-mode-show-strict-warnings nil
                  js2-mode-show-parse-errors nil
                  js2-basic-offset 2
                  js-indent-level 2
                  javascript-repl `nodejs
                  node-add-modules-path t)
+     ;; react
      git
      (osx :variables
           osx-option-as 'meta)
      compleseus
      markdown
+     (tree-sitter :variables
+                  spacemacs-tree-sitter-hl-black-list '(js2-mode rjsx-mode)
+                  tree-sitter-syntax-highlight-enable t
+                  tree-sitter-fold-enable t)
      (lsp :variables
           lsp-lens-enable t
           lsp-modeline-diagnostics-enable t
@@ -63,32 +69,26 @@ This function should only modify configuration layer settings."
           lsp-enable-file-watchers nil
           lsp-log-io nil
           lsp-modeline-code-actions-enable nil)
-     java
-     (go :variables
-         go-use-golangci-lint t
-         go-tab-width 4
-         go-backend 'lsp)
      yaml
      (sql :variables
           sql-capitalize-keywords t
           sql-backend nil)
-     (scala :variables
-            scala-auto-treeview t
-            scala-auto-insert-asterisk-in-comments t
-            scala-sbt-window-position 'bottom)
+     ;; (scala :variables
+     ;;        scala-auto-treeview t
+     ;;        scala-auto-insert-asterisk-in-comments t
+     ;;        scala-sbt-window-position 'bottom)
      (shell :variables
             shell-default-shell 'vterm
             close-window-with-terminal t
             shell-default-height 18
             shell-default-position 'bottom)
-     (docker :variables
-             docker-dockerfile-backend 'lsp)
+     ;; (docker :variables
+     ;;         docker-dockerfile-backend 'lsp)
      (treemacs :variables
                treemacs-use-icons-dired nil
                treemacs-no-png-images t
                treemacs-use-all-the-icons-theme nil)
-     (vue :variables
-          vue-backend 'lsp))
+     )
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -124,37 +124,6 @@ It should only modify the values of Spacemacs settings."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
-   ;; If non-nil then enable support for the portable dumper. You'll need to
-   ;; compile Emacs 27 from source following the instructions in file
-   ;; EXPERIMENTAL.org at to root of the git repository.
-   ;;
-   ;; WARNING: pdumper does not work with Native Compilation, so it's disabled
-   ;; regardless of the following setting when native compilation is in effect.
-   ;;
-   ;; (default nil)
-   dotspacemacs-enable-emacs-pdumper nil
-
-   ;; Name of executable file pointing to emacs 27+. This executable must be
-   ;; in your PATH.
-   ;; (default "emacs")
-   dotspacemacs-emacs-pdumper-executable-file "emacs"
-
-   ;; Name of the Spacemacs dump file. This is the file will be created by the
-   ;; portable dumper in the cache directory under dumps sub-directory.
-   ;; To load it when starting Emacs add the parameter `--dump-file'
-   ;; when invoking Emacs 27.1 executable on the command line, for instance:
-   ;;   ./emacs --dump-file=$HOME/.emacs.d/.cache/dumps/spacemacs-27.1.pdmp
-   ;; (default (format "spacemacs-%s.pdmp" emacs-version))
-   dotspacemacs-emacs-dumper-dump-file (format "spacemacs-%s.pdmp" emacs-version)
-
-   ;; If non-nil ELPA repositories are contacted via HTTPS whenever it's
-   ;; possible. Set it to nil if you have no way to use HTTPS in your
-   ;; environment, otherwise it is strongly recommended to let it set to t.
-   ;; This variable has no effect if Emacs is launched with the parameter
-   ;; `--insecure' which forces the value of this variable to nil.
-   ;; (default t)
-   dotspacemacs-elpa-https nil
-
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    ;; (default 5)
    dotspacemacs-elpa-timeout 5
@@ -215,6 +184,13 @@ It should only modify the values of Spacemacs settings."
    ;; If the value is nil then no banner is displayed. (default 'official)
    dotspacemacs-startup-banner 'official
 
+   ;; Scale factor controls the scaling (size) of the startup banner. Default
+   ;; value is `auto' for scaling the logo automatically to fit all buffer
+   ;; contents, to a maximum of the full image height and a minimum of 3 line
+   ;; heights. If set to a number (int or float) it is used as a constant
+   ;; scaling factor for the default logo size.
+   dotspacemacs-startup-banner-scale 'auto
+
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -238,7 +214,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-startup-buffer-multi-digit-delay 0.3
 
    ;; If non-nil, show file icons for entries and headings on Spacemacs home buffer.
-   ;; This has no effect in terminal or if "all-the-icons" package or the font
+   ;; This has no effect in terminal or if "nerd-icons" package or the font
    ;; is not installed. (default nil)
    dotspacemacs-startup-buffer-show-icons nil
 
@@ -267,16 +243,7 @@ It should only modify the values of Spacemacs settings."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
                          doom-solarized-light
-                         doom-ephemeral
-                         doom-moonlight
-                         doom-dracula
-                         doom-snazzy
-                         doom-gruvbox
-                         doom-acario-dark
-                         doom-monokai-spectrum
-                         doom-challenger-deep
-                         doom-xcode
-                         doom-monokai-classic)
+                         doom-xcode)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
@@ -291,13 +258,18 @@ It should only modify the values of Spacemacs settings."
    ;; (default t)
    dotspacemacs-colorize-cursor-according-to-state t
 
-   ;; Default font or prioritized list of fonts. The `:size' can be specified as
+   ;; Default font or prioritized list of fonts. This setting has no effect when
+   ;; running Emacs in terminal. The font set here will be used for default and
+   ;; fixed-pitch faces. The `:size' can be specified as
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Source Code Pro"
                                :size 16.0
                                :width normal
                                :weight normal)
+
+   ;; Default icons font, it can be `all-the-icons' or `nerd-icons'.
+   dotspacemacs-default-icons-font 'all-the-icons
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -318,7 +290,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-major-mode-leader-key ","
 
    ;; Major mode leader key accessible in `emacs state' and `insert state'.
-   ;; (default "C-M-m" for terminal mode, "<M-return>" for GUI mode).
+   ;; (default "C-M-m" for terminal mode, "M-<return>" for GUI mode).
    ;; Thus M-RET should work as leader key in both GUI and terminal modes.
    ;; C-M-m also should work in terminal mode, but not in GUI mode.
    dotspacemacs-major-mode-emacs-leader-key (if window-system "<M-return>" "C-M-m")
@@ -372,6 +344,10 @@ It should only modify the values of Spacemacs settings."
    ;; Which-key frame position. Possible values are `right', `bottom' and
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
    ;; right; if there is insufficient space it displays it at the bottom.
+   ;; It is also possible to use a posframe with the following cons cell
+   ;; `(posframe . position)' where position can be one of `center',
+   ;; `top-center', `bottom-center', `top-left-corner', `top-right-corner',
+   ;; `top-right-corner', `bottom-left-corner' or `bottom-right-corner'
    ;; (default 'bottom)
    dotspacemacs-which-key-position 'bottom
 
@@ -381,6 +357,22 @@ It should only modify the values of Spacemacs settings."
    ;; displays the buffer in a same-purpose window even if the buffer can be
    ;; displayed in the current window. (default nil)
    dotspacemacs-switch-to-buffer-prefers-purpose nil
+
+   ;; Whether side windows (such as those created by treemacs or neotree)
+   ;; are kept or minimized by `spacemacs/toggle-maximize-window' (SPC w m).
+   ;; (default t)
+   dotspacemacs-maximize-window-keep-side-windows t
+
+   ;; If nil, no load-hints enabled. If t, enable the `load-hints' which will
+   ;; put the most likely path on the top of `load-path' to reduce walking
+   ;; through the whole `load-path'. It's an experimental feature to speedup
+   ;; Spacemacs on Windows. Refer the FAQ.org "load-hints" session for details.
+   dotspacemacs-enable-load-hints nil
+
+   ;; If t, enable the `package-quickstart' feature to avoid full package
+   ;; loading, otherwise no `package-quickstart' attemption (default nil).
+   ;; Refer the FAQ.org "package-quickstart" section for details.
+   dotspacemacs-enable-package-quickstart nil
 
    ;; If non-nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
@@ -397,12 +389,12 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
-   ;; (default nil) (Emacs 24.4+ only)
+   ;; (default t) (Emacs 24.4+ only)
    dotspacemacs-maximized-at-startup nil
 
    ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
-   ;; variable with `dotspacemacs-maximized-at-startup' in OSX to obtain
-   ;; borderless fullscreen. (default nil)
+   ;; variable with `dotspacemacs-maximized-at-startup' to obtain fullscreen
+   ;; without external boxes. Also disables the internal border. (default nil)
    dotspacemacs-undecorated-at-startup nil
 
    ;; A value from the range (0..100), in increasing opacity, which describes
@@ -414,6 +406,11 @@ It should only modify the values of Spacemacs settings."
    ;; the transparency level of a frame when it's inactive or deselected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
    dotspacemacs-inactive-transparency 90
+
+   ;; A value from the range (0..100), in increasing opacity, which describes the
+   ;; transparency level of a frame background when it's active or selected. Transparency
+   ;; can be toggled through `toggle-background-transparency'. (default 90)
+   dotspacemacs-background-transparency 90
 
    ;; If non-nil show the titles of transient states. (default t)
    dotspacemacs-show-transient-state-title t
@@ -498,6 +495,13 @@ It should only modify the values of Spacemacs settings."
    ;; (default '("rg" "ag" "pt" "ack" "grep"))
    dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
 
+   ;; The backend used for undo/redo functionality. Possible values are
+   ;; `undo-fu', `undo-redo' and `undo-tree' see also `evil-undo-system'.
+   ;; Note that saved undo history does not get transferred when changing
+   ;; your undo system. The default is currently `undo-fu' as `undo-tree'
+   ;; is not maintained anymore and `undo-redo' is very basic."
+   dotspacemacs-undo-system 'undo-fu
+
    ;; Format specification for setting the frame title.
    ;; %a - the `abbreviated-file-name', or `buffer-name'
    ;; %t - `projectile-project-name'
@@ -524,13 +528,18 @@ It should only modify the values of Spacemacs settings."
    ;; (default nil - same as frame-title-format)
    dotspacemacs-icon-title-format nil
 
-   ;; Show trailing whitespace (default t)
+   ;; Color highlight trailing whitespace in all prog-mode and text-mode derived
+   ;; modes such as c++-mode, python-mode, emacs-lisp, html-mode, rst-mode etc.
+   ;; (default t)
    dotspacemacs-show-trailing-whitespace t
 
    ;; Delete whitespace while saving buffer. Possible values are `all'
    ;; to aggressively delete empty line and long sequences of whitespace,
    ;; `trailing' to delete only the whitespace at end of lines, `changed' to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
+   ;; The variable `global-spacemacs-whitespace-cleanup-modes' controls
+   ;; which major modes have whitespace cleanup enabled or disabled
+   ;; by default.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
 
@@ -574,7 +583,7 @@ default it calls `spacemacs/load-spacemacs-env' which loads the environment
 variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
 See the header of this file for more information."
   (spacemacs/load-spacemacs-env)
-)
+  )
 
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
@@ -582,23 +591,10 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (setq configuration-layer-elpa-archives
-        '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-          ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-          ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
   (setq url-proxy-services
-      '(("http" . "127.0.0.1:7890")
-        ("https" . "127.0.0.1:7890")))
-)
-
-
-(defun dotspacemacs/user-load ()
-  "Library to load while dumping.
-This function is called only while dumping Spacemacs configuration. You can
-`require' or `load' the libraries of your choice that will be included in the
-dump."
-)
-
+        '(("http" . "127.0.0.1:7890")
+          ("https" . "127.0.0.1:7890")))
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
@@ -618,7 +614,7 @@ before packages are loaded."
   (setq web-mode-enable-css-colorization nil)
   (setq lsp-enable-symbol-highlighting nil)
   (setq byte-compile-warnings '((not cl-functions)))
-)
+  )
 
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -628,31 +624,24 @@ before packages are loaded."
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
 This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(css-indent-offset 2)
- '(doom-modeline-buffer-file-name-style 'file-name)
- '(doom-modeline-indent-info t)
- '(doom-modeline-major-mode-icon nil)
- '(doom-modeline-window-width-limit 60)
- '(lsp-java-format-settings-profile "GoogleStyle")
- '(lsp-java-format-settings-url
-   "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml")
- '(lsp-java-jdt-download-url
-   "https://download.eclipse.org/jdtls/snapshots/jdt-language-server-latest.tar.gz")
- '(package-selected-packages
-   '(treemacs-all-the-icons scala-mode fringe-helper git-gutter yaml magit ghub closql emacsql-sqlite emacsql treepy magit-section git-commit with-editor transient counsel swiper ivy helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org helm-mode-manager helm-lsp helm-ls-git helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag ace-jump-helm-line helm helm-core web-mode tagedit slim-mode scss-mode sass-mode pug-mode impatient-mode htmlize haml-mode emmet-mode counsel-css company-web web-completion-data yasnippet-snippets xterm-color ws-butler writeroom-mode winum which-key wgrep web-beautify vterm volatile-highlights vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-evil toc-org tide terminal-here symon symbol-overlay string-inflection string-edit spaceline-all-the-icons smex smeargle shell-pop sbt-mode restart-emacs rainbow-delimiters quickrun prettier-js popwin pcre2el password-generator paradox org-superstar open-junk-file npm-mode nodejs-repl mvn multi-term multi-line monokai-theme molokai-theme mmm-mode maven-test-mode markdown-toc lsp-ui lsp-origami lsp-metals lsp-java lsp-ivy lorem-ipsum livid-mode link-hint json-reformat json-navigator json-mode js2-refactor js-doc ivy-yasnippet ivy-xref ivy-purpose ivy-hydra ivy-avy info+ indent-guide hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-make groovy-mode groovy-imports google-translate golden-ratio gitignore-templates git-timemachine git-modes git-messenger git-link git-gutter-fringe gh-md fuzzy forge font-lock+ flycheck-pos-tip flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help editorconfig dumb-jump drag-stuff dotenv-mode doom-modeline dired-quick-sort diminish devdocs define-word counsel-projectile company column-enforce-mode clean-aindent-mode centered-cursor-mode browse-at-remote auto-yasnippet auto-highlight-symbol async aggressive-indent add-node-modules-path ace-link ac-ispell))
- '(smartparens-global-mode t)
- '(standard-indent 2)
- '(undo-tree-auto-save-history nil)
- '(warning-suppress-types '((comp))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t))
-)
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(css-indent-offset 2)
+   '(doom-modeline-buffer-file-name-style 'file-name)
+   '(doom-modeline-indent-info t)
+   '(doom-modeline-major-mode-icon nil)
+   '(doom-modeline-window-width-limit 60)
+   '(smartparens-global-mode t)
+   '(standard-indent 2)
+   '(undo-tree-auto-save-history nil)
+   '(warning-suppress-types '((comp))))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t))
+  )
