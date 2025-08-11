@@ -40,10 +40,10 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      emacs-lisp
      (typescript :variables
-                 typescript-backend 'lsp
+                 typescript-backend 'none
                  typescript-indent-level 2)
      (javascript :variables
-                 javascript-backend 'lsp
+                 javascript-backend 'none
                  javascript-fmt-tool 'web-beautify
                  javascript-import-tool 'import-js
                  js2-mode-show-strict-warnings nil
@@ -614,6 +614,7 @@ before packages are loaded."
   (setq web-mode-enable-css-colorization nil)
   (setq lsp-enable-symbol-highlighting nil)
   (setq byte-compile-warnings '((not cl-functions)))
+  (add-to-list 'auto-mode-alist '("\\.ets\\'" . typescript-mode))
   )
 
 
